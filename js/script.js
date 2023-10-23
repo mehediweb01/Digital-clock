@@ -12,10 +12,11 @@ function timeShow() {
     h = h - 12;
     am_pm = "PM";
   }
+
   h = h < 10 ? "0" + h : h;
-  h = h <= 12 ? "12" : h;
   m = m < 10 ? "0" + m : m;
   s = s < 10 ? "0" + s : s;
+  h = h == 00 ? "12" : h;
   hoursEl.innerText = h;
   minuteEl.innerText = m;
   secondEl.innerHTML = s;
@@ -34,7 +35,7 @@ const yearEl = document.getElementById("years");
 
 function dateShow() {
   let d = new Date().getDate();
-  let m = new Date().getMonth()+1;
+  let m = new Date().getMonth() + 1;
   let y = new Date().getFullYear();
   d = d < 10 ? "0" + d : d;
   m = m < 10 ? "0" + m : m;
